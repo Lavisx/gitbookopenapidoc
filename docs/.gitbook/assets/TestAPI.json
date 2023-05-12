@@ -1,0 +1,244 @@
+{
+  "openapi": "3.0.0",
+  "x-stoplight": {
+    "id": "nm538tuxpj02f"
+  },
+  "info": {
+    "title": "TestAPI",
+    "version": "1.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/owner/addAdvertisingProvider": {
+      "post": {
+        "summary": "Přidat poskytovatele reklamy",
+        "tags": [
+          "owner",
+          "AdvertisingProvider"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "x-stoplight": {
+                        "id": "rk4ipb8a8d57e"
+                      },
+                      "default": true,
+                      "readOnly": true
+                    },
+                    "id": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "fz1qxqd0thzzz"
+                      },
+                      "example": 13,
+                      "description": "id poskytovatele reklamy",
+                      "readOnly": true
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "id"
+                  ]
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "success": true,
+                      "id": 13
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-api-owner-addAdvertisingProvider",
+        "description": "vytvoří nového poskytovatele reklamy a vrátí jeho systémové ID.\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "advertising_provider": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "ubccaaveie6f4"
+                    },
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "qa5bhlsfufrpe"
+                        },
+                        "description": "* textový kód poskytovatele reklamy\n* musí být jednoznačný v rámci celého systému",
+                        "maxLength": 64,
+                        "example": "myCode4"
+                      },
+                      "name": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "sqgeyk4g3ec60"
+                        },
+                        "description": "* jméno poskytovatele reklamy",
+                        "maxLength": 64,
+                        "example": "myNName4"
+                      },
+                      "authentication_data": {
+                        "type": "object",
+                        "x-stoplight": {
+                          "id": "dy8cpt6rjalvp"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "name"
+                    ]
+                  }
+                }
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "advertising_provider": {
+                      "code": "myCode4",
+                      "name": "myNName4",
+                      "authentication_data": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/owner/updateAdvertisingProvider": {
+      "post": {
+        "summary": "Upravit poskytovatele reklamy",
+        "operationId": "post-api-owner-updateAdvertisingProvider",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "x-stoplight": {
+                        "id": "ifyvld1gtjdsk"
+                      },
+                      "default": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "success": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "upraví Poskytovatele reklamy a vrátí informaci o úspěchu",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "dm5n4isav7jp2"
+                    },
+                    "example": 13
+                  },
+                  "data": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "xicgv70ax168f"
+                    },
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "zpbstxdmka5dr"
+                        },
+                        "example": "mycode4",
+                        "maxLength": 64
+                      },
+                      "name": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "387f7wl02z30z"
+                        },
+                        "example": "myNamkej",
+                        "maxLength": 64
+                      },
+                      "authentication_data": {
+                        "type": "object",
+                        "x-stoplight": {
+                          "id": "wp5qyd6h5u6xb"
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "data"
+                ]
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "id": 13,
+                    "data": {
+                      "code": "mycode4",
+                      "name": "myNamkej"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "AdvertisingProvider",
+          "owner"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "tags": [
+    {
+      "name": "AdvertisingProvider"
+    },
+    {
+      "name": "owner"
+    }
+  ]
+}
