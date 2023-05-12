@@ -18,7 +18,6 @@
       "post": {
         "summary": "Přidat poskytovatele reklamy",
         "tags": [
-          "owner",
           "AdvertisingProvider"
         ],
         "responses": {
@@ -224,21 +223,18 @@
           "description": ""
         },
         "tags": [
-          "AdvertisingProvider",
-          "owner"
+          "AdvertisingProvider"
         ]
       }
     }
   },
   "components": {
-    "schemas": {}
+    "schemas": {},
+    "securitySchemes": {}
   },
   "tags": [
     {
       "name": "AdvertisingProvider"
-    },
-    {
-      "name": "owner"
     }
   ]
 }
