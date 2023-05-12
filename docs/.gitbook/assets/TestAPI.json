@@ -229,7 +229,20 @@
     }
   },
   "components": {
-    "schemas": {},
+    "schemas": {
+      "Testmodel": {
+        "title": "Testmodel",
+        "x-stoplight": {
+          "id": "qmwlhwrfiopmk"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "securitySchemes": {}
   },
   "tags": [
